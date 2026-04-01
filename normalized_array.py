@@ -1,7 +1,7 @@
 import numpy as np
 
 def normalized_array(arr):
-    arr = np.asarray(arr)  
+    arr = np.asarray(arr)
 
     min_val = np.min(arr)
     max_val = np.max(arr)
