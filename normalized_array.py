@@ -1,13 +1,17 @@
 import numpy as np
 
 def normalized_array(arr):
+    arr = np.asarray(arr)  
+
     min_val = np.min(arr)
     max_val = np.max(arr)
+
     if max_val == min_val:
         return np.zeros_like(arr, dtype=float)
-    x_norm = (arr - min_val) / (max_val - min_val)
-    return x_norm
 
+    x_norm = (arr - min_val) / (max_val - min_val)
+
+    return x_norm
 
 
 if __name__ == "__main__":
