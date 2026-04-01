@@ -6,11 +6,9 @@ def normalize_array(arr):
     min_val = np.min(arr)
     max_val = np.max(arr)
 
-    # טיפול במקרה שכל הערכים שווים
     if max_val == min_val:
         return np.zeros_like(arr, dtype=float)
 
-    # נרמול
     normalized = (arr - min_val) / (max_val - min_val)
 
     return normalized
