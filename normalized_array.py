@@ -1,17 +1,16 @@
 import numpy as np
 
-def normalized_array(arr):
-    arr = np.asarray(arr)
+def normalized_array(input_array):
+    data = input_array.copy()
+    data = np.array(data)
 
-    min_val = np.min(arr)
-    max_val = np.max(arr)
+    if np.min(data) == np.max(data):
+        return np.zeros(data.shape)
 
-    if max_val == min_val:
-        return np.zeros_like(arr, dtype=float)
+    else:
+        data = (data - np.min(data)) / (np.max(data) - np.min(data))
 
-    x_norm = (arr - min_val) / (max_val - min_val)
-
-    return x_norm
+    return data
 
 
 if __name__ == "__main__":
