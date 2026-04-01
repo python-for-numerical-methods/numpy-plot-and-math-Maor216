@@ -1,6 +1,6 @@
 import numpy as np
 
-def normalize_array(arr):
+def normalized_array(arr):
     arr = np.asarray(arr)  # מבטיח שזה NumPy array
 
     min_val = np.min(arr)
