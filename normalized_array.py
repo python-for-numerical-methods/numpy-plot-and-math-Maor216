@@ -1,13 +1,16 @@
-def normalized_array(arr):
-    min_val = np.min(arr)
-    max_val = np.max(arr)
+import numpy as np
 
-    if max_val == min_val:
-        return np.zeros_like(arr, dtype=float)
+def normalized_array(input_array):
+    data = np.array(input_array)
 
-    x_norm = (arr - min_val) / (max_val - min_val)
+    if np.all(data == data[0]):
+        return np.zeros(data.shape)
 
-    return x_norm
+    else:
+        new_array = (data - np.min(data)) / (np.max(data) - np.min(data))
+
+    return new_array
+
     
 if __name__ == "__main__":
     # כאן הסטודנטים יכולים להריץ בדיקה עצמית מהירה
